@@ -19,9 +19,16 @@ export default defineConfig({
       entry: "src/index.ts",
       name: "UIComponents",
       fileName: "index",
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       external: ["react", "react-dom", "tailwindcss"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "ReactDOM",
+        },
+      },
     },
   },
   resolve: {
